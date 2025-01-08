@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Pengertian Hipertensi - BERKIAT</title>
+  <title>Konsultasi - BERKIAT</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -15,6 +15,8 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
   <link
     href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
     rel="stylesheet">
@@ -51,7 +53,7 @@
 
       <nav id="navmenu" class="navmenu">
         <ul>
-            <li><a href="index.html">Home</a></li>
+          <li><a href="index.html">Home</a></li>
             <li><a href="service.html" class="active">Layanan</a></li>
             <li><a href="contact.html">Kontak</a></li>
         </ul>
@@ -64,55 +66,69 @@
   </header>
 
   <main class="main">
-        <!-- Services Section -->
-        <section id="services" class="recent-posts section">
-
-            <!-- Section Title -->
-            <div class="container section-title" data-aos="fade-up">
-              <h2>Layanan</h2>
-              <!-- <p>Temukan informasi terkini dan terpercaya tentang berbagai topik yang menarik dan bermanfaat untuk Anda</p> -->
-            </div><!-- End Section Title -->
-      
-            <div class="container">
-      
-              <div class="row gy-4">
-      
-                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
-                  <a href="pengertian-hipertensi.html" style="text-decoration: none; color: inherit;">
-                    <div class="card">
-                      <img src="assets/img/img_hipertensi.png" class="img-fluid" alt="">
-                      <h3>Informasi Tentang Hipertensi</h3>
-                      <p>Eum ad dolor et. Autem aut fugiat debitis voluptatem consequuntur sit. Et veritatis id.</p>
-                    </div>
-                  </a>
-                </div>
-                
-      
-                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
-                  <a href="diet-dash.html" style="text-decoration: none; color: inherit;">
-                    <div class="card">
-                      <img src="assets/img/img_diet_dash.png" class="diet img-fluid" alt="">
-                      <h3>Informasi Diet Turunkan Hipertensi</h3>
-                      <p>Repudiandae amet nihil natus in distinctio suscipit id. Doloremque ducimus ea sit non.</p>
-                    </div>
-                  </a>
-                </div><!-- End Card Item -->
-      
-                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
-                  <a href="konsultasi.html" style="text-decoration: none; color: inherit;">
-                    <div class="card">
-                      <img src="assets/img/img_konsul.png" class="img-fluid" alt="">
-                      <h3>Konsultasi Gizi</h3>
-                      <p>Quam rem vitae est autem molestias explicabo debitis sint. Vero aliquid quidem commodi.</p>
-                    </div>
-                  </a>
-                </div><!-- End Card Item -->
-      
-              </div>
-      
+          <!-- Service Details Section -->
+    
+          <section id="service-details" class="service-details section">
+            <div class="container section-title">
+              <h2>Konsultasi</h2>
             </div>
       
-          </section><!-- /Services Section -->
+            <div class="container">
+              <div class="row gy-4">
+                <div class="col-lg-8">
+                  <!-- Content Sections -->
+                  <div id="konsultasi" class="content-section" data-aos="fade-right" data-aos-delay="100">
+                    <h3>Konsultasi sekarang</h3>
+                    <div class="contact">
+                        <form onsubmit="sendToWhatsApp(event)" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+                            <div class="row gy-4">
+              
+                              <div class="col-md-6">
+                                <input type="text" id="name" class="form-control" placeholder="Nama" required>
+                              </div>
+              
+                              <div class="col-md-6 ">
+                                <input type="number" class="form-control" id="usia" placeholder="Usia" required>
+                              </div>
+              
+                              <div class="col-12">
+                                <select id="gender" class="form-control" required>
+                                  <option value="" disabled selected>--- Pilih Jenis Kelamin ---</option>
+                                  <option value="pria">Pria</option>
+                                  <option value="wanita">Wanita</option>
+                                </select>
+                              </div>
+              
+                              <div class="col-12">
+                                <textarea class="form-control" id="message" rows="6" placeholder="Pesan" required></textarea>
+                              </div>
+              
+                              <div class="col-12 text-center">
+              
+                                <button type="submit">Kirim Pesan</button>
+                              </div>
+              
+                            </div>
+                          </form>
+                    </div>
+                  </div>
+
+                  <div class="nav-btn d-flex mt-4">
+                    <button id="prev-btn" class="btn" style="background-color: #47b2e4; color: white;">Prev</button>
+                    <!-- <button id="next-btn" class="btn" style="background-color: #47b2e4; color: white;">Next</button> -->
+                  </div>
+                </div>
+      
+                <div class="col-lg-4">
+                  <!-- Navigation Links -->
+                  <div class="services-list">
+                    <a href="#" class="active">Konsultasi</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
   </main>
 
   <footer id="footer" class="footer">
@@ -179,17 +195,57 @@
   <div id="preloader"></div>
 
   <!-- Vendor JS Files -->
+   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/waypoints-2/waypoints.min.js"></script>
   <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/counterup/counterup.min.js"></script>
+
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const prevBtn = document.getElementById("prev-btn");
+      let currentIndex = 0;
+
+      prevBtn.addEventListener("click", () => {
+        window.location.href = 'diet-dash.html';
+      });
+
+    
+    });
+  </script>
+
+<script>
+    function sendToWhatsApp(event) {
+      event.preventDefault();
+      var name = document.getElementById('name').value.trim();
+      var usia = document.getElementById('usia').value.trim();
+      var gender = document.getElementById('gender').value.trim();
+      var message = document.getElementById('message').value.trim();
+  
+      // Validasi apakah semua field sudah terisi
+      if (name !== "" && usia !== "" && gender !== "" && message !== "") {
+        // Membentuk pesan WhatsApp
+        var whatsappMessage = `Halo, saya ingin melakukan konsultasi.\n\n*Nama:* ${name}\n*Usia:* ${usia}\n*Jenis Kelamin:* ${gender}\n*Pesan:* ${message}`;
+        var url = `https://wa.me/6289525506693?text=${encodeURIComponent(whatsappMessage)}`;
+
+        // Redirect ke WhatsApp
+        window.location.href = url;
+
+        // Reset form setelah redirect
+        document.querySelector('.php-email-form').reset();
+      }
+    }
+  </script>
 
 </body>
 
