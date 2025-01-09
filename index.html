@@ -30,6 +30,10 @@
   <link href="assets/css/main.css" rel="stylesheet">
   <link href="assets/vendor/animate/animate.min.css" rel="stylesheet">
 
+  <!-- Bootstrap Tour CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tour/0.12.0/css/bootstrap-tour-standalone.min.css" rel="stylesheet">
+
+
   <!-- =======================================================
   * Template Name: Arsha
   * Template URL: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/
@@ -60,7 +64,7 @@
           <!-- <li><a href="#testimonials">Testimoni</a></li>
           <li><a href="#contact">Kontak</a></li> -->
         </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list" id="nav"></i>
       </nav>
 
       <!-- <a class="btn-getstarted" href="#about">Get Started</a> -->
@@ -80,7 +84,7 @@
               DIET DASH</h1>
             <p style="font-style: italic;">Dietary Approach To Stop Hypertension</p>
             <div class="d-flex">
-              <a href="#services" class="btn-get-started">Mulai sekarang</a>
+              <a href="#services" class="btn-get-started" id="step1">Mulai sekarang</a>
               <!-- <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ"
                 class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Watch
                   Video</span></a> -->
@@ -155,7 +159,7 @@
         <h5>Klik pada layanan yang tersedia untuk mengetahui detail informasi yang anda butuhkan</h5>
       </div><!-- End Section Title -->
 
-      <div class="container">
+      <div class="container" id="layanan">
 
         <div class="row gy-4">
 
@@ -210,7 +214,7 @@
             <p>Ingin mendapatkan saran mengenai hipertensi dan diet DASH? Klik tombol di bawah ini untuk langsung berkonsultasi dengan ahli gizi kami melalui WhatsApp. Dapatkan panduan kesehatan yang Anda butuhkan, kapan saja dan di mana saja.</p>
           </div>
           <div class="col-xl-3 cta-btn-container text-center">
-            <a class="cta-btn align-middle" href="https://wa.me/6289525506693">Mulai Konsultasi</a>
+            <a class="cta-btn align-middle" href="https://wa.me/6289525506693" id="konsultasi">Mulai Konsultasi</a>
           </div>
         </div>
 
@@ -230,7 +234,7 @@
         <p>Temukan bagaimana BERKIAT membantu banyak orang menjaga kesehatan dan mengelola hipertensi dengan informasi akurat dan layanan telehealth.</p>
       </div><!-- End Section Title -->
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
+      <div class="container" data-aos="fade-up" data-aos-delay="100"  id="testi">
 
         <div class="swiper init-swiper">
           <script type="application/json" class="swiper-config">
@@ -408,8 +412,13 @@
   <!-- Preloader -->
   <div id="preloader"></div>
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- Bootstrap JS -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+  <!-- Bootstrap Tour JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tour/0.12.0/js/bootstrap-tour-standalone.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
@@ -420,6 +429,85 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <script>
+    // Inisialisasi tur
+    var tour = new Tour({
+      steps: [
+        {
+          element: "#step1", 
+          title: "Selamat datang di Berkiat",
+          content: "Klik untuk mulai dan pilih layanan",
+          template: `
+            <div class='popover tour'>
+              <div class='arrow'></div>
+              <h3 class='popover-title'></h3>
+              <div class='popover-content'></div>
+            </div>`,
+        },
+        {
+          element: "#layanan", 
+          title: "Layanan",
+          content: "Pilih layanan yang tersedia untuk mengetahui detail informasi",
+          placement: "top",
+          template: `
+            <div class='popover tour'>
+              <div class='arrow'></div>
+              <h3 class='popover-title'></h3>
+              <div class='popover-content'></div>
+              <div class='popover-navigation'>
+                <button class='btn btn-default' data-role='prev'>&laquo; Sebelumnya</button>
+                <button class='btn btn-default' data-role='next'>Selanjutnya &raquo;</button>
+              </div>
+            </div>`,
+        },
+        {
+          element: "#konsultasi", 
+          title: "Konsultasi",
+          content: "Kami siap memberikan solusi yang tepat dengan layanan konsultasi kami. Klik 'Mulai Konsultasi' untuk melanjutkan.",
+          placement: "top",
+          template: `
+            <div class='popover tour'>
+              <div class='arrow'></div>
+              <h3 class='popover-title'></h3>
+              <div class='popover-content'></div>
+              <div class='popover-navigation'>
+                <button class='btn btn-default' data-role='prev'>&laquo; Sebelumnya</button>
+                <button class='btn btn-default' data-role='next'>Selanjutnya &raquo;</button>
+              </div>
+            </div>`,
+        },
+        {
+          element: "#testi", 
+          title: "Apa Kata Pengguna Kami?",
+          content: "Jangan hanya mendengarkan dari kami, lihat apa yang dikatakan pengguna kami yang puas!",
+          placement: "top",
+          template: `
+            <div class='popover tour'>
+              <div class='arrow'></div>
+              <h3 class='popover-title'></h3>
+              <div class='popover-content'></div>
+              <div class='popover-navigation'>
+                <button class='btn btn-default' data-role='prev'>&laquo; Sebelumnya</button>
+                <button class='btn btn-default' data-role='end'>Selesai &raquo;</button>
+              </div>
+            </div>`,
+        },
+      ],
+      backdrop: true,
+    });
+  
+    // Memulai tur setelah halaman dimuat
+    document.addEventListener('DOMContentLoaded', function () {
+      tour.init();
+      tour.start();
+    });
+  
+    // Event listener untuk melanjutkan tur ke langkah berikutnya saat tombol diklik
+    document.getElementById('step1').addEventListener('click', function() {
+      tour.next(); 
+    });
+  </script>
 
 </body>
 

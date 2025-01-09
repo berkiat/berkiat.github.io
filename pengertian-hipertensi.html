@@ -31,6 +31,10 @@
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
+  <!-- Bootstrap Tour CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tour/0.12.0/css/bootstrap-tour-standalone.min.css" rel="stylesheet">
+
+
   <!-- =======================================================
   * Template Name: Arsha
   * Template URL: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/
@@ -240,12 +244,12 @@
                   </div>
 
                   <div class="nav-btn d-flex mt-4">
-                    <button id="prev-btn" class="btn me-4" style="background-color: #47b2e4; color: white; visibility: hidden;">Prev</button>
-                    <button id="next-btn" class="btn" style="background-color: #47b2e4; color: white;">Next</button>
+                    <button id="prev-btn" class="btn me-4" style="background-color: #47b2e4; color: white; visibility: hidden;"> Sebelumnya</button>
+                    <button id="next-btn" class="btn" style="background-color: #47b2e4; color: white;">Selanjutnya</button>
                   </div>
                 </div>
       
-                <div class="col-lg-4">
+                <div class="col-lg-4" id="nav">
                   <!-- Navigation Links -->
                   <div class="services-list">
                     <a href="#" class="active">Pengertian</a>
@@ -323,9 +327,13 @@
   <!-- Preloader -->
   <div id="preloader"></div>
 
-  <!-- Vendor JS Files -->
-   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- Bootstrap JS -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+  <!-- Bootstrap Tour JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tour/0.12.0/js/bootstrap-tour-standalone.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
@@ -341,7 +349,45 @@
   <script src="assets/js/main.js"></script>
 
   <script>
+    var tour = new Tour({
+      steps: [
+        {
+          element: "#nav", 
+          title: "Petunjuk penggunaan",
+          content: "Anda dapat memilih pada navigasi berikut untuk memilih konten yang ingin dilihat",
+          placement: "top",
+          template: `
+            <div class='popover tour'>
+              <div class='arrow'></div>
+              <h3 class='popover-title'></h3>
+              <div class='popover-content'></div>
+              <div class='popover-navigation'>
+                <button class='btn btn-default' data-role='next'>Selanjutnya &raquo;</button>
+              </div>
+            </div>`,
+        },
+        {
+          element: "#next-btn", 
+          title: "Petunjuk penggunaan",
+          content: "Anda juga dapat memilih konten sebelum dan selanjutnya dengan meng-klik pada tombol disini.",
+          placement: "top",
+          template: `
+            <div class='popover tour'>
+              <div class='arrow'></div>
+              <h3 class='popover-title'></h3>
+              <div class='popover-content'></div>
+              <div class='popover-navigation'>
+                <button class='btn btn-default' data-role='prev'>&laquo; Sebelumnya</button>
+                <button class='btn btn-default' data-role='end'>Selesai &raquo;</button>
+              </div>
+            </div>`,
+        },
+      ],
+      backdrop: true,
+    });
     document.addEventListener("DOMContentLoaded", () => {
+      // tour.init();
+      tour.restart();
       const contentSections = document.querySelectorAll(".content-section");
       const serviceLinks = document.querySelectorAll(".services-list a");
       const prevBtn = document.getElementById("prev-btn");
