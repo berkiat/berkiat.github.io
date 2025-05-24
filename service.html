@@ -183,6 +183,31 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+  <!-- Widget Configuration -->
+  <script>
+    window.ChatWidgetConfig = {
+      webhook: {
+        url: 'https://ivanacth.app.n8n.cloud/webhook/c2ecdf03-c5d9-4c87-8d88-6054ea3a7eb9/chat',
+        route: 'general'
+      },
+      branding: {
+        logo: "assets/img/favicon.png", // Ganti dengan logo Anda
+        name: "Berkiat AI", // Nama perusahaan Anda
+        welcomeText: "Hi 👋, Ada yang bisa kami bantu?", // Pesan sambutan
+        responseTimeText: "Kami siap membantu 24 Jam"
+      },
+      style: {
+        primaryColor: "#47b2e4", // Warna utama
+        secondaryColor: "#47b2e4", // Warna sekunder
+        position: "right", // Posisi widget: 'left' atau 'right'
+        backgroundColor: "#ffffff", // Warna latar belakang chat
+        fontColor: "#333333" // Warna font
+      }
+    };
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/gh/WayneSimpson/n8n-chatbot-template@ba944c3/chat-widget.js"></script>
+  <!-- End Widget Script -->
 
 </body>
 
